@@ -1,4 +1,5 @@
-@import "variables";
-@import "settings";
-@import "bootstrap/scss/bootstrap";
+@use "_variables";
+@use "_settings";
+@use "_layout";
+
 

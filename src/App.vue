@@ -1,14 +1,22 @@
 <template>
-    <div id="app" class="">
-      <h1 class="text-center">Welcome to Nasa Feed</h1>
+    <div id="app-container" class="app-container">
+      <Header />
+      <router-view />
+      <Footer />
     </div>
   </template>
   
   <script>
+  import Header from "./components/Header.vue";
+  import Footer from "./components/Footer.vue";
   export default {
-    name: "App",
-  };
-  </script>
+    name: 'App',
+    components: {
+        Header,
+        Footer
+    },
+};
+</script>
   
 
   
