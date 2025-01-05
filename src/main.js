@@ -1,15 +1,24 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
 import router from './router';
 import { createPinia } from 'pinia';
+import { useNasaStore } from './stores/nasaStore';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './assets/styles/index.scss';
 
-const app = createApp(App)
-const pinia = createPinia()
+const app = createApp(App);
 
-app.use(router)
+const pinia = createPinia();
 app.use(pinia);
-app.mount('#app')
+
+(async () => {
+  const nasaStore = useNasaStore();
+  if (!nasaStore.data) {
+    await nasaStore.fetchArticleOfTheDay(); 
+  }
+  
+  app.use(router); 
+  app.mount('#app'); 
+})();
