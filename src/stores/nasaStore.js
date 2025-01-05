@@ -1,29 +1,30 @@
-import { defineStore } from 'pinia';
-import axios from 'axios';
-const apiKey = import.meta.env.VITE_NASA_API_KEY;
+import { defineStore } from 'pinia'; 
+import axios from 'axios'; 
 
 export const useNasaStore = defineStore('nasa', {
-  state: () => ({
-    articleOfTheDay: {},
-    loading: false, 
-    error: null, 
-  }),
-  actions: {
-    async fetchArticleOfTheDay() {
-        this.loading = true;
+    state: () => ({
+      data: null,
+      isLoading: false,
+      error: null,
+    }),
+    actions: {
+      async fetchArticleOfTheDay() {
+        this.isLoading = true;
         this.error = null;
+  
         try {
-          const response = await axios.get('https://api.nasa.gov/planetary/apod', {
-            params: {
-              api_key: apiKey,
-            },
-          });
-          this.articleOfTheDay = response.data;
+          const response = await axios.get(
+            `https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_NASA_API_KEY}`
+          );
+          console.log('Data fetched:', response.data);
+          this.data = response.data; 
         } catch (err) {
-          this.error = 'Failed to fetch the Photo of the Day.';
+          console.error('Error fetching data:', err);
+          this.error = 'Failed to fetch data';
         } finally {
-          this.loading = false;
+          this.isLoading = false;
         }
+      },
     },
-  },
-});
+  });
+  

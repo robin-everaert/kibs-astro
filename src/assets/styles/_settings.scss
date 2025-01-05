@@ -8,3 +8,14 @@ $primaryFont: 'Ubuntu', sans-serif;
 body {
     font-family: $primaryFont !important;
 }
+
+// 
+p {
+    font-size: 1.2rem;
+}
+h1 {
+    margin-bottom: 2rem;
+}
+.text-justify {
+    text-align: justify;
+}
