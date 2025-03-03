@@ -19,6 +19,9 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <router-link to="/" class="nav-link">Home</router-link>
+            </li>   
+            <li>
+              <router-link to="/solar" class="nav-link">Solar Activity</router-link>
             </li>
           </ul>
         </div>
