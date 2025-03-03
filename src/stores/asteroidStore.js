@@ -17,7 +17,7 @@ export const useAsteroidStore = defineStore('asteroid', {
           
             return { startDate, endDate };
           },          
-      async fetchFLR() {
+      async fetchNEO() {
         this.isLoading = true;
         this.error = null;
 
@@ -28,14 +28,14 @@ export const useAsteroidStore = defineStore('asteroid', {
             `https://api.nasa.gov/neo/rest/v1/feed`,
             {
               params: {
-                startDate,
-                endDate,
+                start_date: startDate,
+                end_date: endDate,
                 api_key: import.meta.env.VITE_NASA_API_KEY,
               },
             }
           );
-          console.log('Asteroid Data fetched:', response.data);
-          this.flrData = response.data; 
+          console.log('NEO Data fetched:', response.data.near_earth_objects);
+          this.neoData = response.data.near_earth_objects; 
         } catch (err) {
           console.error('Error fetching data:', err);
           this.error = 'Failed to fetch data';
