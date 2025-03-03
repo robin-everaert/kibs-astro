@@ -18,15 +18,15 @@
             <hr class="hr" />
             <section class="row article-of-the-day-container mt-5">
                 <div class="col12">
-                    <h1 class="text-center">Article Of The Day</h1>
-                    <h3>{{ data.title }}</h3>
+                    <h2 class="text-center">Article Of The Day</h2>
+                    <h4>{{ data.title }}</h4>
                     <span class="fst-italic">On {{ data.date }}</span>
-
+                    <!-- Code image -->
                     <div
                     class="media-container d-flex justify-content-center align-items-center mt-5"
-                    v-if="data.type === 'image'"
+                    v-if="data.media_type === 'image'"
                     >
-                        <!-- Code image -->
+                        <img :src="data.url" :alt="data.title" class="img img-fluid" />
                     </div>
                     <div
                     class="media-container d-flex justify-content-center align-items-center mt-3"

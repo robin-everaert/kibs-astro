@@ -23,6 +23,9 @@
             <li>
               <router-link to="/solar" class="nav-link">Solar Activity</router-link>
             </li>
+            <li>
+              <router-link to="/asteroid" class="nav-link">Asteroid</router-link>
+            </li>
           </ul>
         </div>
       </div>
