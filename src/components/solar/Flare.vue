@@ -1,7 +1,7 @@
 <template>
   <h2 class="text-center">Solar Flare (FLR)</h2>
   <p class="text-justify">
-    This table shows the latest solar flares from the past 24 hours. The first column displays the intensity of the eruption.
+    This table shows the latest solar flares from the past 72 hours. The first column displays the intensity of the eruption.
     Each intensity is represented by a letter:
   </p>
   <ul>

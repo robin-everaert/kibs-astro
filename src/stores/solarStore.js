@@ -9,19 +9,20 @@ export const useSolarStore = defineStore('solar', {
     }),
     getters: {},
     actions: {
-      getLast24HoursDates() {
-        const endDate = new Date().toISOString().split('T')[0]; // Today
-        const startDate = new Date(Date.now() - 24 * 60 * 60 * 1000)
-          .toISOString()
-          .split('T')[0];  // -24h
-
-        return { startDate, endDate };
-      },
+        getLast72HoursDates() {
+            const endDate = new Date().toISOString().split('T')[0];
+            const startDate = new Date(Date.now() - 72 * 60 * 60 * 1000)
+              .toISOString()
+              .split('T')[0];  
+        
+            return { startDate, endDate };
+        },
+        
       async fetchFLR() {
         this.isLoading = true;
         this.error = null;
 
-        const { startDate, endDate } = this.getLast24HoursDates();
+        const { startDate, endDate } = this.getLast72HoursDates();
 
         try {
           const response = await axios.get(

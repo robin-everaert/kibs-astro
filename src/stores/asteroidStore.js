@@ -9,19 +9,19 @@ export const useAsteroidStore = defineStore('asteroid', {
     }),
     getters: {},
     actions: {
-        getLast7DaysDates() {
-            const endDate = new Date().toISOString().split('T')[0]; // Today
-            const startDate = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
+        getLast72HoursDates() {
+            const endDate = new Date().toISOString().split('T')[0];
+            const startDate = new Date(Date.now() - 72 * 60 * 60 * 1000)
               .toISOString()
-              .split('T')[0]; 
-          
+              .split('T')[0];  
+        
             return { startDate, endDate };
-          },          
+        },
       async fetchNEO() {
         this.isLoading = true;
         this.error = null;
 
-        const { startDate, endDate } = this.getLast7DaysDates();
+        const { startDate, endDate } = this.getLast72HoursDates();
 
         try {
           const response = await axios.get(

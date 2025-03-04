@@ -1,9 +1,12 @@
 <template>
     <main id="main" class="main main-asteroid">
         <div class="container">
-            <div class="row">
+            <div class="row intro mt-5">
                 <div class="col-12">
-                    <h1>Asteroid View</h1>
+                    <h1 class="text-center">Asteroid</h1>
+                    <p class="fst-18  ps-1 pe-1 text-justify">
+                        Presentation text
+                    </p>
                 </div>
             </div>
 
