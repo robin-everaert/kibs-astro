@@ -10,7 +10,7 @@
     <li>X signifies the most intense flares.</li>
   </ul>
   <p class="text-justify">
-    The second column displays the solar region where the eruption occurred, and the third column shows the time of the event in French local time. The duration is provided in minutes.
+     The second column displays the solar region where the eruption occurred, and the third column shows the time of the event in French local time. The duration is provided in minutes.
     In the last column, you can click the link to find more detailed information about each solar data.
   </p>
   <div class="table-responsive mt-5">
